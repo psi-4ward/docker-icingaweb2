@@ -25,7 +25,7 @@ if [ "$(echo "SELECT COUNT(*) FROM information_schema.tables WHERE table_schema 
   # Director kickstart
   echo "Initializing Icinga2 Director"
   icingacli director migration pending && icingacli director migration run || true
-  icingacli director kickstart run
+  [ -e /etc/icingaweb2/modules/director/kickstart.ini ] && icingacli director kickstart run
 
   # Insert default config
   if $DIRECTOR_INSERT_DEFAULTS ; then
