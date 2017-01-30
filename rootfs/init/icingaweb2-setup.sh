@@ -17,9 +17,11 @@ if [ $(ls -1 /etc/icingaweb2/enabledModules | wc -l) -le 0 ] ; then
 fi
 
 # Setup resources.ini
-while read line; do
+if [ ! -e /etc/icingaweb2/resources.ini ]; then
+  while read line; do
     eval echo "$line"
-done < /temp/resources.ini > /etc/icingaweb2/resources.ini
+  done < /temp/resources.ini > /etc/icingaweb2/resources.ini
+fi
 
 # Set icinga2 api pass
 if [ -n "$ICINGA_API_PASS" ] ; then
