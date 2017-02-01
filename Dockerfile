@@ -58,8 +58,7 @@ ADD rootfs /
 EXPOSE 80
 VOLUME [ "/etc/icingaweb2"]
 
-# TODO: better health check
-HEALTHCHECK CMD curl -f http://localhost/ || exit 1
+HEALTHCHECK CMD nc -z $WEB_DB_HOST $WEB_DB_PORT && nc -z localhost 80
 
 CMD ["/init/run.sh"]
 
