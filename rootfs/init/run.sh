@@ -12,6 +12,9 @@ fi
 [ -x /init/mysql-setup.sh ] && /init/mysql-setup.sh
 [ -x /init/director-setup.sh ] && /init/director-setup.sh
 
+# Apache gets grumpy about PID files pre-existing
+rm -f /var/run/apache2/apache2.pid
+
 # Start Webserver
 echo "Starting Webserver"
 exec /usr/sbin/httpd -f /etc/apache2/httpd.conf -DFOREGROUND
