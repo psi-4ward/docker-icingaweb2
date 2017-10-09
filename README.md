@@ -5,8 +5,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/psitrax/icingaweb2.svg)](https://hub.docker.com/r/psitrax/icingaweb2/)
 [![Docker Automated buil](https://img.shields.io/docker/automated/psitrax/icingaweb2.svg)](https://hub.docker.com/r/psitrax/icingaweb2/)
 
-* Icingaweb2 v2.4.1
-  * Director v1.3.0
+* Icingaweb2 v2.4.2
+  * Director v1.3.1
   * Cube v1.0.0
   * Businessprocess v2.0.0
 * Alpine based
@@ -18,6 +18,11 @@
 **Exposed Volume: `/etc/icingaweb2`**: Icingaweb2 Config Files  
 **Exposed Port: `80`**: Icingaweb2 HTTP Port
 
+### Supported tags
+
+* Exact: i.e. `2.4.2-r1`: Icingaweb2 Version 2.4.2, image build 1
+* `2.4`: Icingaweb2 Version 2.4.x, latest image build
+* `2`: Icingaweb2 Version 2.x.x, latest image build
 
 ### Example
 
