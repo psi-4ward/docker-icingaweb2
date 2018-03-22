@@ -2,10 +2,11 @@ FROM alpine
 
 MAINTAINER Christoph Wiechert <wio@psitrax.de>
 
-ENV REFRESHED_AT="2017-11-27"\
-    ICINGAWEB_VERSION="2.5.0" \
-    DIRECTOR_VERSION="1.4.2" \
+ENV REFRESHED_AT="2018-03-22"\
+    ICINGAWEB_VERSION="2.5.1" \
+    DIRECTOR_VERSION="1.4.3" \
     CUBE_VERSION="1.0.1" \
+    GRAFANA_VERSION="1.2.1" \
     BUSINESSPROCESS_VERSION="2.1.0" \
     TIMEZONE="UTC" \
     ICINGAWEB_AUTOCONF=true \
@@ -47,6 +48,10 @@ RUN apk add --no-cache \
     mkdir -p /icingaweb2/modules/businessprocess && \
     wget -q -O - https://github.com/Icinga/icingaweb2-module-businessprocess/archive/v${BUSINESSPROCESS_VERSION}.tar.gz \
       | tar xz --strip 1 -C /icingaweb2/modules/businessprocess --strip 1 && \
+    echo "Fetch Module Grafana ${GRAFANA_VERSION}" && \
+    mkdir -p /icingaweb2/modules/grafana && \
+    wget -q -O - https://github.com/Mikesch-mp/icingaweb2-module-grafana/archive/v${GRAFANA_VERSION}.tar.gz \
+      | tar xz --strip 1 -C /icingaweb2/modules/grafana --strip 1 && \
     chown -R apache /icingaweb2 && \
     mkdir -p /var/log/icingaweb2 && \
     chown -R apache /var/log/icingaweb2
