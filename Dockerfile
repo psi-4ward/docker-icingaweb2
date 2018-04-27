@@ -3,7 +3,7 @@ FROM alpine
 MAINTAINER Christoph Wiechert <wio@psitrax.de>
 
 ENV REFRESHED_AT="2018-04-27"\
-    ICINGAWEB_VERSION="2.5.2" \
+    ICINGAWEB_VERSION="2.5.3" \
     DIRECTOR_VERSION="1.4.3" \
     CUBE_VERSION="1.0.1" \
     GRAFANA_VERSION="1.2.1" \
