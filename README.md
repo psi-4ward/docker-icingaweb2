@@ -5,11 +5,12 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/psitrax/icingaweb2.svg)](https://hub.docker.com/r/psitrax/icingaweb2/)
 [![Docker Automated buil](https://img.shields.io/docker/automated/psitrax/icingaweb2.svg)](https://hub.docker.com/r/psitrax/icingaweb2/)
 
-* Icingaweb2 v2.6.3
-  * Director v1.6.2
-  * Cube v1.0.1
+* Icingaweb2 v2.7.3
+  * Director v1.7.2
+  * Reprting 0.9.2
+  * Cube v1.1.0
   * Businessprocess v2.2.0
-  * Grafana v1.3.4
+  * Grafana v1.3.6
 * Alpine based
 * Automated Database and Director initialization and update
 * Waits at least 60 seconds for database to come up

@@ -11,6 +11,7 @@ fi
 [ -x /init/icingaweb2-setup.sh ] && /init/icingaweb2-setup.sh
 [ -x /init/mysql-setup.sh ] && /init/mysql-setup.sh
 [ -x /init/director-setup.sh ] && /init/director-setup.sh
+[ -x /init/run-director-daemon.sh ] && /init/run-director-daemon.sh
 
 # Apache gets grumpy about PID files pre-existing
 rm -f /var/run/apache2/apache2.pid

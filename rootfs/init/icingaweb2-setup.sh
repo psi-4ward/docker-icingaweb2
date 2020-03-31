@@ -7,7 +7,10 @@ sed -r -i "s~^;?date.timezone =.*~date.timezone = ${TIMEZONE:-UTC}~" /etc/php7/p
 [ "$ICINGAWEB_AUTOCONF" == false ] && exit 0 || true
 
 # Enable modules
-if [ $(ls -1 /etc/icingaweb2/enabledModules | wc -l) -le 0 ] ; then
+if [ ! -e /etc/icingaweb2/enabledModules ] || [ $(ls -1 /etc/icingaweb2/enabledModules | wc -l) -le 0 ] ; then
+  icingacli module enable ipl
+  icingacli module enable incubator
+  icingacli module enable reactbundle
   icingacli module enable monitoring
   icingacli module enable doc
   icingacli module enable translation
